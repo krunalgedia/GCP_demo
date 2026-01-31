@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from google.cloud import storage
 import json
@@ -25,3 +26,7 @@ def process():
     out_blob.upload_from_string(json.dumps(result))
 
     return jsonify(result)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  # Cloud Run injects PORT
+    app.run(host="0.0.0.0", port=port)
