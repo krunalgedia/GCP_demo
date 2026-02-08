@@ -9,7 +9,7 @@ on:
 jobs:
   terraform:
     name: Terraform
-    runs-on: [self-hosted, gcp-hosted]  # self-hosted runner
+    runs-on: self-hosted # self-hosted runner
     defaults:
       run:
         shell: bash
