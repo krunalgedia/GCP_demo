@@ -1,5 +1,13 @@
 name: Terraform testing
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  repository-projects: write
+  id-token: write
+
 on:
   workflow_dispatch:   # enables manual trigger
 
