@@ -1,9 +1,10 @@
 name: Terraform testing
 
 on:
-  push:
-    branches: ["master"]
-  pull_request:
+  # push:
+  #   branches: ["main"]
+  # pull_request:
+  workflow_dispatch:   # 👈 enables manual trigger
 
 jobs:
   terraform:
