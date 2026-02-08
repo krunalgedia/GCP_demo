@@ -1,4 +1,4 @@
-name: Testing Workflow Variables
+name: Testing Variables defined inside workflow file
 
 on:
   workflow_dispatch
