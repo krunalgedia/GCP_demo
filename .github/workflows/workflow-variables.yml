@@ -12,7 +12,7 @@ jobs:
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello Mona it's Monday"
+      - name: "Heyyy!"
         run: echo "$Greeting $First_Name is using $cloud!"
         env:
-          First_Name: Vishal
+          First_Name: Krunal
