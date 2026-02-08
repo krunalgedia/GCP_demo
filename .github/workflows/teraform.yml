@@ -1,14 +1,12 @@
 name: Terraform testing
 
 on:
-  # push:
-  #   branches: ["main"]
-  # pull_request:
-  workflow_dispatch:   # 👈 enables manual trigger
+  workflow_dispatch:   # enables manual trigger
 
 jobs:
+  # Call the docs workflow
   call-workflow-passing-data:
-    uses: .github/workflows/automate-readme.yml
+    uses: ./.github/workflows/automate-readme.yml@main  # ✅ must include branch/ref
   terraform:
     name: Terraform
     runs-on: self-hosted
