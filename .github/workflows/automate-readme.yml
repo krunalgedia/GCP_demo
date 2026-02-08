@@ -2,11 +2,13 @@ name: Generate Terraform Docs
 #on:
 #  push:
 #    branches: [ "master" ]
+# on:
+#   # push:
+#   #   branches: ["main"]
+#   # pull_request:
+#   workflow_dispatch:   # 👈 enables manual trigger
 on:
-  # push:
-  #   branches: ["main"]
-  # pull_request:
-  workflow_dispatch:   # 👈 enables manual trigger
+  workflow_call:  
 
 permissions:
   repository-projects: write
