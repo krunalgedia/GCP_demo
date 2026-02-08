@@ -1,0 +1,31 @@
+name: Terraform testing
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+
+jobs:
+  terraform:
+    name: Terraform
+    runs-on: [self-hosted, gcp-hosted]  # self-hosted runner
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Plan
+      run: terraform plan -input=false
+
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/master'
+      run: terraform apply -auto-approve -input=false
