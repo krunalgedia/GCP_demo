@@ -9,7 +9,7 @@ on:
 jobs:
   terraform:
     name: Terraform
-    runs-on: self-hosted # self-hosted runner
+    runs-on: self-hosted
     defaults:
       run:
         shell: bash
@@ -17,6 +17,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+    # Step 4: Authenticate to GCP using Service Account JSON key
+    - name: Authenticate to GCP
+      run: |
+        echo "${{ secrets.GCP_SA_KEY }}" > /tmp/key.json
+        export GOOGLE_APPLICATION_CREDENTIALS=/tmp/key.json
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
