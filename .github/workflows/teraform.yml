@@ -7,6 +7,8 @@ on:
   workflow_dispatch:   # 👈 enables manual trigger
 
 jobs:
+  call-workflow-passing-data:
+    uses: krunalgedia/GCP_demo/blob/main/.github/workflows/automate-readme.yml@master
   terraform:
     name: Terraform
     runs-on: self-hosted
