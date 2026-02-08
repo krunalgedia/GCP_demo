@@ -6,7 +6,7 @@ on:
 jobs:
   # Call the docs workflow
   call-workflow-passing-data:
-    uses: ./.github/workflows/automate-readme.yml@main  # ✅ must include branch/ref
+    uses: ./.github/workflows/automate-readme.yml
   terraform:
     name: Terraform
     runs-on: self-hosted
