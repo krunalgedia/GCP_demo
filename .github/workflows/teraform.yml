@@ -8,7 +8,7 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: krunalgedia/GCP_demo/main/.github/workflows/automate-readme.yml@main
+    uses: .github/workflows/automate-readme.yml
   terraform:
     name: Terraform
     runs-on: self-hosted
